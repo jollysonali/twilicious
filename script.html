@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>links</title>
+	</head>
+<body>
+	<script src="urls.js"></script>
+	<script>
+	    //create a div
+	    var div = document.createElement('div');
+	    var i;
+	    //loop through the length of urls and attach dom elements <dt> <a href>
+	    for (i = 0; i <= urls.length; i++)
+	        {
+                var link = document.createElement('a');
+                link.setAttribute('href', urls[i]);
+                var wrapper = document.createElement('dt'); 
+                wrapper.appendChild(link);
+                div.appendChild(wrapper);
+	        }
+	    //attach the Delicious Doctype as a string to div.innerHTML
+	    var string = '<!DOCTYPE NETSCAPE-Bookmark-file-1>\n<!--This is an automatically generated file.\nIt will be read and overwritten.\nDo Not Edit! -->\n<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">\n<Title>Bookmarks</Title>\n<H1>Bookmarks</H1>'
+
+        console.log(string + div.innerHTML);
+        //copy what we get from Console log, stick it into a new HTML file and Upload to delicious.
+        
+	</script>
+</body>
+</html>
